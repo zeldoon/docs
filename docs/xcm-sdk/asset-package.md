@@ -789,7 +789,7 @@ getParaId(TChain)
 ## Query Parachain name
 Function to get a specific TChain from a Parachain id. 
 ```ts
-getTChain(paraId: number, ecosystem: 'Polkadot' | 'Kusama' | 'Passeo' | 'Westend' | 'Ethereum') // When Ethereum ecosystem is selected please fill ParachainID as 1 to select Ethereum.
+getTChain(paraId: number, ecosystem: 'Polkadot' | 'Kusama' | 'Paseo' | 'Westend' | 'Ethereum') // When Ethereum ecosystem is selected please fill ParachainID as 1 to select Ethereum.
 ```
 
 **Example output:**
