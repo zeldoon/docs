@@ -2777,16 +2777,15 @@ The following endpoint allows you to query the asset balance on a specific chain
   ::: details Parameters
 
   - `chain` (Path parameter): Specifies the name of the Chain.
-  - `recipient` (Inside JSON body): (required): Specifies the address of the account.
-  - `currency` (Inside JSON body): (required): Specifies the currency to query.
+  - `address` (Inside JSON body): (required): Specifies the address of the account.
+  - `currency` (Inside JSON body): (optional): Specifies the currency to query. If omitted, the balance of the chain's native asset is returned.
 
   :::
 
   ::: details Errors
 
   - `400`  (Bad request exception) - Returned when parameter 'chain' is not provided
-  - `400`  (Bad request exception) - Returned when body parameter 'recipient' is not provided
-  - `400`  (Bad request exception) - Returned when body parameter 'currency' is not provided
+  - `400`  (Bad request exception) - Returned when body parameter 'address' is not provided
   - `500`  (Internal server error) - Returned when an unknown error has occurred. In this case please open an issue.
     
   :::
@@ -2832,14 +2831,14 @@ Asset selection of multiple assets:
 
 **Example of request:**
 ```ts
-const response = await fetch("https://api.paraspell.xyz/v2/balance/:chain/asset", {
+const response = await fetch("https://api.paraspell.xyz/v2/balance/:chain", {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-        recipient: "Address" // Replace "Address" with wallet address (In AccountID32 or AccountKey20 Format) 
-        currency: {currencySpec}, // Refer to currency spec options above
+        address: "Address", // Replace "Address" with wallet address (In AccountID32 or AccountKey20 Format)
+        currency: {currencySpec}, // Optional - refer to currency spec options above
     })
 });
 ```
