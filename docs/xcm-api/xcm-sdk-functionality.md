@@ -2589,7 +2589,7 @@ const response = await fetch('https://api.paraspell.xyz/v2/swap/supported-assets
 ### Supported assets for currency to
 The following endpoint allows you to query the supported assets for the destination currency when performing a swap.
 
- **Endpoint**: `GET /v2/swap/supported-assets-from?exchange=:exchange&to=:chain`
+ **Endpoint**: `GET /v2/swap/supported-assets-to?exchange=:exchange&to=:chain`
 
   ::: details Parameters
   - `to` (query parameter): Optional - destination chain.
@@ -2607,7 +2607,7 @@ The following endpoint allows you to query the supported assets for the destinat
 
 **Example of request:**
 ```ts
-const response = await fetch('https://api.paraspell.xyz/v2/swap/supported-assets-from?exchange=:exchange&to=:chain');
+const response = await fetch('https://api.paraspell.xyz/v2/swap/supported-assets-to?exchange=:exchange&to=:chain');
 ```
 
 ## Asset queries
